@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+  .page-header
+    h3 登录
+  form(method='POST')
+    input(type='hidden', name='_csrf', value=_csrf)
+    .col-sm-8.col-sm-offset-2
+      .form-group
+        label.control-label(for='email') 邮箱
+        input.form-control(type='email', name='email', id='email', placeholder='邮箱', autofocus=true)
+      .form-group
+        label.control-label(for='password') 密码
+        input.form-control(type='password', name='password', id='password', placeholder='******')
+      .form-group
+        button.btn.btn-primary(type='submit')
+          span.ion-android-hand
+          | 登录
+        a.btn.btn-link(href='/forgot') 忘记密码？
+      hr
+      a.btn.btn-block.btn-danger.btn-social(href='/auth/weibo')
+        i.fa.fa-weibo
+        | 使用微博登录

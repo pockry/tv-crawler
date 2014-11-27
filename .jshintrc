@@ -1,0 +1,46 @@
+// Get more infomation about this file from:
+// http://jshint.com/docs/options/
+
+{
+  //强制使用驼峰命名法
+  "camelcase": true,
+  
+  // 条件句强制花括号
+  "curly": true,
+  
+  // 使用 === 和 !== 而非 == 和 !=
+  "eqeqeq": true,
+  
+  // 当扩展js原生对象时发出警告
+  "freeze": true,
+  
+  // 文本缩进为2字符
+  "indent": 2,
+  
+  // 构造函数名首字母必须大写
+  "newcap": true,
+  
+  // 字符串引号使用单引号
+  "quotmark": "single",
+  
+  // 关闭逗号在前面的警告
+  "laxcomma": true,  
+  
+  // 嵌入{}的最大深度
+  "maxdepth": 5,
+  
+  // 函数语句数量
+  "maxstatements": 20,
+  
+  // 每行最大字符数
+  "maxlen": 120,
+  
+  // 允许==null
+  "eqnull": true,
+  
+  // 允许在控制体内定义变量而在外部使用
+  "funcscope": true,
+  
+  // node环境
+  "node": true
+}

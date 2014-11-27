@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  .page-header.page404-head
+    i.fa.fa-frown-o
+    | &nbsp;404
+  .col-sm-8.col-sm-offset-1
+    p Page Not Found!
+    if content
+      p #{content}
+    else
+      p &nbsp;
+    p &nbsp;
+    p &nbsp;
+    p &nbsp;

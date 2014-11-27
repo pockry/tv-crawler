@@ -1,0 +1,40 @@
+.navbar.navbar-default.navbar-fixed-top
+  .container
+    .navbar-header
+      button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href='/')
+        span.ion-cube
+        | Node Starter
+    .collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li(class=title=='Home'?'active':undefined)
+          a(href='/') 主页
+      ul.nav.navbar-nav.navbar-right
+        if !user
+          li(class=title=='Login'?'active':undefined)
+            a(href='/login') 登录
+          li(class=title=='Create Account'?'active':undefined)
+            a(href='/signup') 注册
+        else
+          li.dropdown(class=title=='Account Management'?'active':undefined)
+            a.dropdown-toggle(href='#', data-toggle='dropdown')
+              if user.profile.picture
+                img(src='#{user.profile.picture}')
+              else
+                img(src='#{user.gravatar(60)}')
+              | #{user.profile.name || user.email || user.id}&nbsp;
+              i.caret
+            ul.dropdown-menu
+              li
+                a(href='/account')
+                  span.ion-person
+                  | 账号设置
+              li.divider
+              li
+                a(href='/logout')
+                  span.ion-log-out
+                  |  注销

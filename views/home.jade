@@ -5,6 +5,19 @@ block content
   p.lead a crawler for tv info.
   hr
   .row
-    .col-sm-6
-      h2 特性
-      p 下面是NodeStarter支持的一些特性。
+    .col-sm-12
+      h2 test
+      p fetch trakt api
+      hr
+      p #{result.date}
+    for eps in result.episodes
+      .col-sm-2 
+        strong #{eps.show.title}
+      .col-sm-1 S#{eps.episode.season}E#{eps.episode.number}
+      .col-sm-2 S#{eps.show.country}
+      .col-sm-3 #{eps.episode.title}
+      .col-sm-2 #{eps.episode.first_aired_iso}
+      .clearfix
+
+
+

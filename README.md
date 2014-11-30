@@ -38,6 +38,15 @@ mongod -dbpath XXX
 npm start
 ```
 
+你还需要去[trakt.tv](http://www.trakt.tv/)注册，就会有一个`api key`，然后填到 `config/secrets.js` 中的对应位置：
+
+```
+...
+
+trakt: 'api key'
+
+```
+
 License
 
 MIT.

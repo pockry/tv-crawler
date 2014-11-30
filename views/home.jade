@@ -3,13 +3,13 @@ extends layout
 block content
   .row
     .col-sm-12
-      p 英美剧 TV Show 信息爬虫。本项目仅为学习研究用，请勿直接用于正式场合。
+      p 英美剧 TV Show 信息爬虫。
       p 技术栈：nodejs + mongoose + superagent + Vue.js. 源码：（
-        a(href='',target='_blank') Github
+        a(href='https://github.com/pockry/tv-crawler',target='_blank') Github
         | ,&nbsp;
-        a(href='',target='_blank') Coding.net
+        a(href='https://coding.net/u/pockry/p/TV-Crawler',target='_blank') Coding.net
         | ,&nbsp;
-        a(href='',target='_blank') git@osc
+        a(href='http://git.oschina.net/pockry/tvcrawler',target='_blank') git@osc
         | ）
       hr
     .clearfix
@@ -32,7 +32,9 @@ block content
           li 类别
           li.show-title 节目名称
           li.show-season 季数
-          li network
+          li.show-network network
+          li.show-poster poster
+          li IMDB
       ul.showinfo(v-repeat="showData")
         li
           span {{category}}
@@ -42,8 +44,14 @@ block content
           span.btn.btn-primary.btn-xs.disabled(v-repeat="genre") {{$value}}
         li.show-season
           span {{season}}
-        li
+        li.show-network
           span {{network}}
+        li.show-poster
+          span
+            a(href='{{poster}}', target='_blank') poster
+        li
+          span
+            a(href='http://www.imdb.com/title/{{imdb_id}}', target='_blank') IMDB
     
       
 

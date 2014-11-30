@@ -1,23 +1,51 @@
 extends layout
 
 block content
-  h1 TV crawler
-  p.lead a crawler for tv info.
-  hr
   .row
     .col-sm-12
-      h2 test
-      p fetch trakt api
+      p 英美剧 TV Show 信息爬虫。本项目仅为学习研究用，请勿直接用于正式场合。
+      p 技术栈：nodejs + mongoose + superagent + Vue.js. 源码：（
+        a(href='',target='_blank') Github
+        | ,&nbsp;
+        a(href='',target='_blank') Coding.net
+        | ,&nbsp;
+        a(href='',target='_blank') git@osc
+        | ）
       hr
-      p #{result.date}
-    for eps in result.episodes
-      .col-sm-2 
-        strong #{eps.show.title}
-      .col-sm-1 S#{eps.episode.season}E#{eps.episode.number}
-      .col-sm-2 S#{eps.show.country}
-      .col-sm-3 #{eps.episode.title}
-      .col-sm-2 #{eps.episode.first_aired_iso}
-      .clearfix
+    .clearfix
+    .col-sm-3.leftnav
+      .input-group.date
+        input.form-control(type="text", readonly)
+        span.input-group-addon
+          i.fa.fa-th
+      ul#dateData
+        li(v-repeat="dateData")
+          .btn-group
+            span.btn.btn-primary.date(title='/date/{{date}}', v-on="click: onClick",v-class='disabled: !count') {{date}}
+            span.btn.btn-danger.pull-right.getshows(title='/getShows?date={{date}}' v-class='disabled: count') {{count | isTrue GET}}
+    .col-sm-9#showinfo
+      template(v-if="init")
+        p 选择左边的时间，以获得对应时间的TV信息。
+        p 本API暂只收录美剧和英剧每一季的首播信息。
+      template(v-if="!init")
+        ul.showinfo.shoinfo-head
+          li 类别
+          li.show-title 节目名称
+          li.show-season 季数
+          li network
+      ul.showinfo(v-repeat="showData")
+        li
+          span {{category}}
+        li.show-title
+          span.title-text {{title}}
+          br
+          span.btn.btn-primary.btn-xs.disabled(v-repeat="genre") {{$value}}
+        li.show-season
+          span {{season}}
+        li
+          span {{network}}
+    
+      
 
 
 

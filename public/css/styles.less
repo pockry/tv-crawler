@@ -2,7 +2,9 @@
 @import "lib/font-awesome/font-awesome";
 @import "lib/ionicons/ionicons";
 @import "lib/bootstrap-social";
+@import "lib/datepicker3";
 @import "themes/modern";
+
 
 // Scaffolding
 // -------------------------
@@ -15,7 +17,9 @@ html {
 body {
   padding-top: 60px;
   margin-bottom: 75px;
+  font-family: Helvetica, "Hiragino Sans GB", "Microsoft Yahei", Sans-serif;
 }
+p,ul{font-family: Helvetica, "Hiragino Sans GB", "Microsoft Yahei", Sans-serif;}
 
 footer {
   position: absolute;
@@ -71,4 +75,73 @@ footer {
   line-height: 1.5em;
   color: #ddd;
   font-weight: bold;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+ul li{
+  margin-bottom: 5px;
+}
+
+#dateData{
+  margin-top: 20px;
+}
+
+#dateData .date{
+  width: 206px;
+}
+
+#dateData .getshows{
+  width: 56px;
+}
+
+.shoinfo-head li{
+  font-weight: bold;
+}
+.showinfo{
+  
+  border-bottom: 1px solid #aaa;
+  margin-bottom: 0;
+}
+
+.showinfo li{
+  display: inline-block;
+  padding: 7px 10px;
+  margin-bottom: 0;
+}
+
+.showinfo li span{
+  display: table-cell;
+}
+
+.showinfo li.show-title{
+  width: 400px;
+  display: inline-block;
+}
+
+.showinfo .show-title .title-text{
+  font-family: georgia;
+  font-size: 18px;
+  line-height: 1.5px;
+  display: inline;
+}
+
+li.show-season{
+  width: 60px;
+}
+.btn-xs{
+  padding: 1px 5px;
+}
+.showinfo li.show-title span.btn-xs{
+  
+  margin-right: 10px;
+  display: inline;
+}
+
+.disabled-fork{
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.65;
+    box-shadow: none;
 }

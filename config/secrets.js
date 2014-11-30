@@ -37,5 +37,7 @@ module.exports = {
   //  , requireState: true // for csrf, default: true
   //  , scope: ['statuses_to_me_read'
   //          , 'follow_app_official_microblog']
-  }
+  },
+
+  trakt: 'api key'
 };

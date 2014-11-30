@@ -15,4 +15,6 @@
 
 //= require lib/jquery-2.1.1.min
 //= require lib/bootstrap.min
+//= require lib/vue.min
+//= require lib/bootstrap-datepicker
 //= require main

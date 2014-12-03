@@ -22,7 +22,7 @@ block content
         li(v-repeat="dateData")
           .btn-group
             span.btn.btn-primary.date(title='/date/{{date}}', v-on="click: onClick",v-class='disabled: !count') {{date}}
-            span.btn.btn-danger.pull-right.getshows(title='/getShows?date={{date}}' v-class='disabled: count') {{count | isTrue GET}}
+            span.btn.btn-danger.pull-right.getshows(title='/getShows?date={{date}}' v-class='disabled: got') {{count | isTrue GET}}
     .col-sm-9#showinfo
       template(v-if="init")
         p 选择左边的时间，以获得对应时间的TV信息。

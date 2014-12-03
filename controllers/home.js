@@ -77,6 +77,7 @@ function transISODate( isodate ) {
 
 function storeShows(date, url, res) {
 	console.log(url);
+	var filter;
 		superagent.get(url)
 			.accept('json')
 			.end(function(err, result) {
@@ -86,7 +87,8 @@ function storeShows(date, url, res) {
 				var count = 0;
 				var showFlag = false;
 				for (var i=0;i<result.length;i++) {
-					if( (result[i].show.country === 'United States' || result[i].show.country === 'United Kingdom') && parseInt(result[i].episode.season) < 1000) {
+					filter = (result[i].show.country === 'United States' || result[i].show.country === 'United Kingdom') && parseInt(result[i].episode.season)  < 1000 &&  result[i].show.imdb_id;
+					if(filter) {
 						count = count + 1;
 						var show = new Show({
 				  		title: result[i].show.title,

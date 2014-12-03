@@ -6,7 +6,7 @@ $(document).ready(function() {
   var showData = [];
 
   Vue.filter('isTrue', function (value, text) {
-    return value ? value : text
+    return value === false ? text : value;
 	});
 
   var displayShows = new Vue({
@@ -60,10 +60,12 @@ $(document).ready(function() {
   	var datesUrl = '/getDates?date='+ choosedDate.toJSON().split("T")[0].split("-").join('');
   	$.getJSON(datesUrl, function(data){
   		for(var i=0;i<dates.length;i++) {
-  			dates[i].count = 0;
+  			dates[i].count = false;
+        dates[i].got = false;
   			for(var j=0;j<data.dates.length;j++){
   				if(dates[i].date === data.dates[j].date) {
   					dates[i].count = data.dates[j].count;
+            dates[i].got = true;
   				} 
   			}
   			
